@@ -1,4 +1,7 @@
-- name: broker group
+- name: broker broker group
+  debug:
+    var: kafka
+- name: broker broker group
   group:
     name: "{{kafka.broker.group}}"
 - name: broker user
