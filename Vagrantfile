@@ -26,7 +26,8 @@ Vagrant.configure("2") do |config|
     config.vm.define "node#{node_id}" do |node|
 
       node.vm.hostname = "node#{node_id}"
-      node.vm.network "private_network", type: "dhcp"
+      # node.vm.network "private_network", type: "dhcp"
+      node.vm.network "private_network", ip: "192.168.77.#{20+node_id}"
       # Only execute once the Ansible provisioner,
       # when all the machines are up and ready.
       if node_id == N-1
